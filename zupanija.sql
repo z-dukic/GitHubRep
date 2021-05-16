@@ -72,6 +72,11 @@ update mjesto set naziv='Marko' where sifra=3;
 update mjesto set naziv='Marko' where sifra=4;
 update mjesto set naziv='Marko' where sifra=5;
 
+#ne mogu obrisati zato što je parent
+#delete from opcina where sifra=3;
+#delete from opcina where sifra=3;
+
+
 select * from zupan;
 select * from zupanija;
 select * from mjesto;
