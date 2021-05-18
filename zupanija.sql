@@ -90,6 +90,12 @@ select 1, 'Osijek' from opcina;
 select 1,2,'Pero' from osoba;
 select now();
 
+select * from opcina where sifra<5;
+select * from opcina where sifra>=3 and sifra<=5;
+select * from opcina where sifra is not null;
+select * from opcina where naziv like 'samo%';
+select * from opcina where naziv like '%za%';
+select * from osoba where naziv not like '%ra';
 
 
 
