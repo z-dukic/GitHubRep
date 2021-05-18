@@ -31,9 +31,9 @@ alter table mjesto add foreign key (opcina) references opcina(sifra);
 alter table zupanija add foreign key (zupan) references zupan(sifra);
 
 insert into zupan (ime,prezime) values
-('Marko','Mariæ'),
-('Pero','Periæ'),
-('Miro','Mariæ');
+('Marko','MariÄ‡'),
+('Pero','PeriÄ‡'),
+('Miro','MariÄ‡');
 
 insert into zupanija (naziv,zupan)
 values 
@@ -44,21 +44,21 @@ values
 insert into opcina (zupanija, naziv)
 values
 (1,'Samobor'),
-(1,'Zaprešiæ'),
+(1,'ZapreÅ¡iÄ‡'),
 (2,'Osijek'),
-(2,'Èepin'),
+(2,'ÄŒepin'),
 (3,'Vukovar'),
 (3,'Vinkovci');
 
 insert into mjesto (opcina,naziv)
 values
-(1,'Pešæenica'),
-(1,'Zapruðe'),
-(2,'Tvrða'),
+(1,'PeÅ¡Ä‡enica'),
+(1,'ZapruÄ‘e'),
+(2,'TvrÄ‘a'),
 (2,'Uljara'),
-(3,'Sajmište'),
+(3,'SajmiÅ¡te'),
 (3,'Mladost'),
-(1,'Kvatriæ'),
+(1,'KvatriÄ‡'),
 (1,'Dolac'),
 (2,'Zeleno polje'),
 (2,'Glavna ulica'),
@@ -72,7 +72,7 @@ update mjesto set naziv='Marko' where sifra=3;
 update mjesto set naziv='Marko' where sifra=4;
 update mjesto set naziv='Marko' where sifra=5;
 
-#ne mogu obrisati zato što je parent
+#ne mogu obrisati zato Å¡to je parent
 #delete from opcina where sifra=3;
 #delete from opcina where sifra=3;
 
@@ -96,6 +96,7 @@ select * from opcina where sifra is not null;
 select * from opcina where naziv like 'samo%';
 select * from opcina where naziv like '%za%';
 select * from osoba where naziv not like '%ra';
+#utf8-
 
 
 
