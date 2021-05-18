@@ -82,6 +82,16 @@ select * from zupanija;
 select * from mjesto;
 select * from opcina;
 
+select naziv as ime from opcina;
+select naziv as ime,zupanija from opcina;
+select naziv,naziv,naziv,naziv from opcina;
+select naziv, 'Osijek' as naziv from opcina
+select 1, 'Osijek' from opcina;
+select 1,2,'Pero' from osoba;
+select now();
+
+
+
 
 
 
