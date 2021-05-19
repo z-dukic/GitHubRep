@@ -121,5 +121,9 @@ select naziv, 'Pero Ždero' as naziv, smjer, predavac from grupa;
 select 1, 'Osijek' from grupa;
 select 1,2,'Pero' from grupa;
 
-
-
+select * from osoba where ime='zoran';
+select * from osoba where sifra>=3 and sifra<=5;
+select * from osoba where sifra is not null;
+select * from smjer where naziv like 'zo%';
+select * from smjer where naziv like '%ra%';
+select * from osoba where ime not like '%ma';
