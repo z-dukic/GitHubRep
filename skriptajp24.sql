@@ -70,19 +70,19 @@ values (null,'PHP programiranje',130,5999.99,false);
 insert into osoba (ime,prezime,email) values
 ('Tomislav','Jakopec','tjakopec@gmail.com'),
 ('Shaquille','O''Neal','shaki@gmail.com'),
-('Mirjam','Vida Blagojeviæ','mirjam.vida@gmail.com'),
-('Stjepan','Pupkariæ','cipapro@gmail.com'),
+('Mirjam','Vida Blagojeviï¿½','mirjam.vida@gmail.com'),
+('Stjepan','Pupkariï¿½','cipapro@gmail.com'),
 ('Josip','Cota','josipcota1@gmail.com'),
-('Danko','Šimiæ','dankosimic@gmail.com'),
+('Danko','ï¿½imiï¿½','dankosimic@gmail.com'),
 ('Luka','Crnjac','lukacr94@gmail.com'),
 ('Denis','Uzelac','uzelac133@gmail.com'),
-('Marijana','Kataliniæ','marijanakatalinic82@gmail.com'),
+('Marijana','Kataliniï¿½','marijanakatalinic82@gmail.com'),
 ('Josip','Conjar','josip.conjar@gmail.com'),
-('Petar','Jagriæ','petarjagric@gmail.com'),
-('Zoran','Ðukiæ','zorandjukic.os@gmail.com'),
-('Igor','Vuèko','igorhefner@gmail.com'),
-('Vedran','Alagiæ','vedran.alagic@outlook.com'),
-('Jakob','Brkiæ','jale.pnv@gmail.com');
+('Petar','Jagriï¿½','petarjagric@gmail.com'),
+('Zoran','ï¿½ukiï¿½','zorandjukic.os@gmail.com'),
+('Igor','Vuï¿½ko','igorhefner@gmail.com'),
+('Vedran','Alagiï¿½','vedran.alagic@outlook.com'),
+('Jakob','Brkiï¿½','jale.pnv@gmail.com');
 
 #1
 insert into predavac(osoba)
@@ -113,4 +113,13 @@ insert into clan values
 
 insert into clan values
 (2,1),(2,2),(2,3),(2,4);
+
+select * from grupa;
+select naziv as ime from grupa;
+select naziv as ime,smjer,predavac from grupa;
+select naziv, 'Pero Å½dero' as naziv, smjer, predavac from grupa;
+select 1, 'Osijek' from grupa;
+select 1,2,'Pero' from grupa;
+
+
 
