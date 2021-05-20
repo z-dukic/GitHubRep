@@ -87,9 +87,17 @@ alter table cura add foreign key(punac) references punac(sifra);
 
 #insert into (nazivtablice 1, nazivtablice2, nazivtablice,...) values (vrijednost 1, vrijednost 2, vrijednost 3);
 insert into svekar (bojaociju) values ('plava');
+insert into svekar (bojaociju) values ('crna');
+insert into svekar (bojaociju) values ('crvena');
 insert into sestra (haljina) values ('crvena');
+insert into sestra (haljina) values ('plava');
+insert into sestra (haljina) values ('bijela');
 insert into sestrasvekar (sestra,svekar) values (1,1);
+insert into sestrasvekar (sestra,svekar) values (1,2);
+insert into sestrasvekar (sestra,svekar) values (2,1);
 insert into zena (kratkamajica,jmbag,bojaociju,sestra) values ('crvena',12312312312,'zelena',1);
+insert into zena (kratkamajica,jmbag,bojaociju,sestra) values ('plava',12312312312,'roza',2);
+insert into zena (kratkamajica,jmbag,bojaociju,sestra) values ('roza',12312312312,'crna',1);
 insert into muskarac (bojaociju) values ('plave');
 insert into muskarac (bojaociju) values ('crvene');
 insert into muskarac (bojaociju) values ('smeđe');
@@ -109,9 +117,22 @@ update cura set ogrlica=100 where ogrlica=50;
 #delete from nazivtablice where vrijednost='nesto';
 delete from muskarac where bojaociju='crvene';
 delete from muskarac where sifra>2;
-delete from punac where hlace='crno';
-delete from punac where sifra>150;
+delete from mladic where kuna>15.78;
 
 select * from svekar;
 select *, haljina from sestra;
 select * from punac where hlace like '%oz%';
+
+
+select a.dukserica, f.asocijalno, e.hlace 
+from svekar a inner join sestrasvekar b on a.sifra=b.svekar 
+inner join sestra c on c.sifra=b.sestra 
+inner join zena d on c.sifra=d.sestra 
+inner join muskarac e on d.sifra=e.zena 
+inner join mladic f on e.sifra=f.muskarac 
+where d.hlace like 'A%' and c.haljina like '%BA%';
+
+ 
+select a.haljina, a.maraka 
+from sestra a inner join sestrasvekar b on a.sifra=b.sestra 
+where b.sestra is null;
