@@ -125,7 +125,8 @@ select * from punac where hlace like '%oz%';
 
 
 select a.dukserica, f.asocijalno, e.hlace 
-from svekar a inner join sestrasvekar b on a.sifra=b.svekar 
+from svekar a 
+inner join sestrasvekar b on a.sifra=b.svekar 
 inner join sestra c on c.sifra=b.sestra 
 inner join zena d on c.sifra=d.sestra 
 inner join muskarac e on d.sifra=e.zena 
