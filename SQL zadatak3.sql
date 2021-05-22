@@ -75,6 +75,5 @@ alter table svekar add foreign key(cura) references cura(sifra);
 alter table snasa add foreign key(ostavljena) references ostavljena(sifra);
 alter table ostavljena add foreign key(prijatelj) references prijatelj(sifra);
 alter table prijateljbrat add foreign key(prijatelj) references prijatelj(sifra);
-
 alter table punica add foreign key(snasa) references snasa(sifra);
 alter table prijateljbrat add foreign key(brat) references brat(sifra);
