@@ -73,3 +73,29 @@ alter table becar add foreign key(snasa) references snasa(sifra);
 alter table snasa add foreign key(zena) references zena(sifra);
 alter table zenamladic add foreign key(zena) references zena(sifra);
 alter table zenamladic add foreign key(mladic) references mladic(sifra);
+
+insert into zena(suknja, prstena) values ('Plava',1);
+insert into zena(suknja, prstena) values ('Crvena',1);
+insert into zena(suknja, prstena) values ('Roza',1);
+
+insert into snasa(haljina, zena) values ('Plava',1);
+insert into snasa(haljina, zena) values ('Plava',2);
+insert into snasa(haljina, zena) values ('Plava',2);
+
+insert into becar (kratkamajica, bojaociju,snasa) values ('Nike','Plava',1);
+insert into becar (kratkamajica, bojaociju,snasa) values ('Adidas','Zelena',2);
+insert into becar (kratkamajica, bojaociju,snasa) values ('Puma','Ljubičasta',3);
+
+insert into mladic (vesta) values ('Plava');
+insert into mladic (vesta) values ('Crvena');
+insert into mladic (vesta) values ('Crna');
+
+insert into zenamladic(zena,mladic) values (1,1);
+insert into zenamladic(zena,mladic) values (2,1);
+insert into zenamladic(zena,mladic) values (1,2);
+
+delete from prijatelj where prstena>17;
+
+select haljina from snasa where treciputa is null;
+
+
