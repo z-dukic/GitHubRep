@@ -96,6 +96,18 @@ insert into svekarcura (svekar,cura) values (1,3);
 
 delete from ostavljena where ogrlica like 17;
 
+select majica from punac where sifra is not null;
+
+select a.asocijalno, f.stilfrizura, e.nausnica 
+from cura a
+inner join svekarcura b on a.sifra=b.cura 
+inner join svekar c on c.sifra=b.svekar
+inner join punac d on c.sifra=d.svekar
+inner join punica e on d.sifra=e.punac 
+inner join ostavljena f on e.sifra=f.punica
+where d.prviputa is not null and c.majica like '%ba%';
+
+select majica, carape from svekar where sifra is not null;
 
 
 
