@@ -76,5 +76,26 @@ alter table punac add foreign key(svekar) references svekar(sifra);
 alter table ostavljena add foreign key(punica) references punica(sifra);
 alter table punica add foreign key(punac) references punac(sifra);
 
+insert into svekar(carape,eura) values ('bijele', 10.10); 
+
+insert into cura (carape,marka,vesta) values ('adidas',15.10,'plava');
+insert into cura (carape,marka,vesta) values ('nike',177.10,'crna');
+insert into cura (carape,marka,vesta) values ('S.Oliver',25.10,'bijela');
+
+insert into punac (prviputa, svekar) values ('2010-09-11',1);
+insert into punac (prviputa, svekar) values ('1978-12-01',1);
+insert into punac (prviputa, svekar) values ('1990-12-25',1);
+
+insert into punica(hlace, nausnica,vesta,modelnaocala,treciputa,punac) values ('plave', 1, 'crvena','Police','2020-12-09',1);
+insert into punica(hlace, nausnica,vesta,modelnaocala,treciputa, punac) values ('crne', 2, 'roza','Aviatorice','2015-11-09',2);
+insert into punica(hlace, nausnica,vesta,modelnaocala,treciputa,punac) values ('bijele', 3, 'ljubicasta','Kineske','2000-12-30',1);
+
+insert into svekarcura (svekar,cura) values (1,1);
+insert into svekarcura (svekar,cura) values (1,2);
+insert into svekarcura (svekar,cura) values (1,3);
+
+delete from ostavljena where ogrlica like 17;
+
+
 
 
