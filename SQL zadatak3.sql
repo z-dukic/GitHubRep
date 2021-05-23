@@ -77,3 +77,31 @@ alter table ostavljena add foreign key(prijatelj) references prijatelj(sifra);
 alter table prijateljbrat add foreign key(prijatelj) references prijatelj(sifra);
 alter table punica add foreign key(snasa) references snasa(sifra);
 alter table prijateljbrat add foreign key(brat) references brat(sifra);
+
+insert into ostavljena (modelnaocala,lipa) values ('crvena',10.10);
+insert into ostavljena (modelnaocala,lipa) values ('plave',20.20);
+insert into ostavljena (modelnaocala,lipa) values ('bijele',30.30);
+
+insert into snasa(kuna, eura, ostavljena) values (70.00,10.00,1);
+insert into snasa(kuna, eura, ostavljena) values (140.00,20.00,2);
+insert into snasa(kuna, eura, ostavljena) values (210.00,30.00,3);
+
+insert into prijatelj (indiferentno) values (1);
+insert into prijatelj (indiferentno) values (0);
+insert into prijatelj (indiferentno) values (1);
+
+insert into brat (ogrlica,ekstroventno) values (15,1);
+insert into brat (ogrlica,ekstroventno) values (20,1);
+insert into brat (ogrlica,ekstroventno) values (30,0);
+
+insert into prijateljbrat (prijatelj, brat) values (1,1);
+insert into prijateljbrat (prijatelj, brat) values (2,1);
+insert into prijateljbrat (prijatelj, brat) values (1,3);
+
+delete from punica where kratkamajica like '%ab%';
+
+select majica from ostavljena where lipa not like '9,10,20,30,35';
+
+
+
+
