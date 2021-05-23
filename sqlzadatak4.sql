@@ -98,4 +98,14 @@ delete from prijatelj where prstena>17;
 
 select haljina from snasa where treciputa is null;
 
+select a.nausnica, f.jmbag, e.kratkamajica 
+from mladic a
+inner join zenamladic b on a.sifra=b.mladic 
+inner join zena c on c.sifra=b.zena 
+inner join snasa d on d.zena=c.sifra 
+inner join becar e on d.sifra=e.snasa 
+inner join prijatelj f on e.sifra=f.becar
+where d.treciputa not like null and c.lipa not like 29;
+
+select lipa, prstena from zena where sifra not like null;
 
