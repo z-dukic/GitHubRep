@@ -102,6 +102,18 @@ delete from punica where kratkamajica like '%ab%';
 
 select majica from ostavljena where lipa not like '9,10,20,30,35';
 
+select a.ekstroventno, f.vesta, e.kuna 
+from brat a 
+inner join prijateljbrat b on a.sifra=b.brat 
+inner join prijatelj c on c.sifra=b.prijatelj
+inner join ostavljena d on c.sifra=d.prijatelj 
+inner join snasa e on d.sifra=e.ostavljena 
+inner join punica f on e.sifra=f.snasa
+where d.lipa not like '91' and c.haljina like '%ba%';
 
+select a.haljina,a.lipa 
+from prijatelj a 
+inner join prijateljbrat b on a.sifra=b.prijatelj 
+where b.sifra like null;
 
 
