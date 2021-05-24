@@ -44,7 +44,7 @@ create table prijateljostavljena(
 );
 
 create table ostavljena(
- sifra int not null primary key auto_increment,
+sifra int not null primary key auto_increment,
 prviputa datetime not null,
 kratkamajica varchar(39) not null,
 drugiputa datetime,
@@ -77,16 +77,29 @@ alter table prijateljostavljena add foreign key(ostavljena) references ostavljen
 alter table zena add foreign key(brat) references brat(sifra);
 alter table brat add foreign key(prijatelj) references prijatelj(sifra);
 
+insert into brat (nausnica,treciputa,narukvica) values (20,'2015-01-09',5);
+insert into brat (nausnica,treciputa,narukvica) values (26,'2018-12-13',7);
+insert into brat (nausnica,treciputa,narukvica) values (10,'2020-11-09',15);
 
+insert into zena (novcica,narukvica,dukserica,brat) values (110.25,1,'nike',1);
+insert into zena (novcica,narukvica,dukserica,brat) values (170.35,1,'adidas',2);
+insert into zena (novcica,narukvica,dukserica,brat) values (150.55,1,'puma',3);
 
+insert into prijatelj (prstena,stilfrizura) values (10,'plava');
+insert into prijatelj (prstena,stilfrizura) values (7,'crna');
+insert into prijatelj (prstena,stilfrizura) values (25,'plava');
 
+insert into ostavljena (prviputa,kratkamajica) values ('2019-01-01','nike');
+insert into ostavljena (prviputa,kratkamajica) values ('2016-01-01', 'adidas');
+insert into ostavljena (prviputa,kratkamajica) values ('2015-01-01', 'puma');
 
+insert into prijateljostavljena(prijatelj,ostavljena) values (1,2);
+insert into prijateljostavljena(prijatelj,ostavljena) values (2,3);
+insert into prijateljostavljena(prijatelj,ostavljena) values (2,1);
 
+update svekrva set suknja='Osijek';
 
-
-
-
-
+delete from decko where modelnaocala like '%ab%';
 
 
 
