@@ -101,9 +101,19 @@ update svekrva set suknja='Osijek';
 
 delete from decko where modelnaocala like '%ab%';
 
+select a.drugiputa, f.zena, e.narukvica 
+from ostavljena a 
+inner join prijateljostavljena b on a.sifra=b.ostavljena 
+inner join prijatelj c on c.sifra=b.prijatelj 
+inner join brat d on d.prijatelj=c.sifra
+inner join zena e on e.brat=d.sifra 
+inner join decko f on e.sifra=f.zena 
+where d.treciputa is not null and c.prstena like 219 
+order by e.narukvica desc;
 
-
-
+select a.prstena, a.introvertno from prijatelj a
+left join prijateljostavljena b on a.sifra=b.prijatelj
+where a.sifra is not null;
 
 
 
