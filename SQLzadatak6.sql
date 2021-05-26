@@ -166,7 +166,28 @@ select hlace, suknja as odjeca from svekrva
 union
 select majica, prviputa as sedmiputa from punac;
 
+# unos podataka u tablicu na osnovu select
+insert into pero 
+select hlace, suknja as odjeca from svekrva
+union
+select majica, prviputa as sedmiputa from punac;
 
+select distinct hlace from pero;
+
+select count(*) from pero;
+
+
+select * from punac where majica not in 
+(select distinct sifra from svekrva);
+
+
+delete from punac where majica not in 
+(select distinct sifra from svekrva);
+
+select od.priceEach, o.orderDate
+from orderdetails od
+inner join orders o on o.orderNumber = od.orderNumber
+where od.priceEach = (select max(od2.priceEach) from orderdetails od2);
 
 
 
