@@ -136,21 +136,35 @@ select distinct prstena from prijatelj;
 
 
 
-update ostavljena a 
+select sum(a.novcica)
+from zena a inner join decko b on a.sifra=b.zena 
+where a.sifra > 1;
+
+
+
+
+
+select  sum(f.zena), avg(e.narukvica )
+from ostavljena a 
 inner join prijateljostavljena b on a.sifra=b.ostavljena 
 inner join prijatelj c on c.sifra=b.prijatelj 
 inner join brat d on d.prijatelj=c.sifra
 inner join zena e on e.brat=d.sifra 
 inner join decko f on e.sifra=f.zena 
-set d.nausnica = 10
-where d.sifra > 1;
+where d.treciputa is not null and c.prstena like 219 
+group by f.zena 
+having sum(f.zena)>1
+order by f.sifra desc;
 
 
+select hlace, suknja as odjeca from svekrva
+union
+select majica, prviputa as sedmiputa from punac;
 
-
-
-
-
+create table pero
+select hlace, suknja as odjeca from svekrva
+union
+select majica, prviputa as sedmiputa from punac;
 
 
 
