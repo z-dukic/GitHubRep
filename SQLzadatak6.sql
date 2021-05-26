@@ -115,13 +115,35 @@ select a.prstena, a.introvertno from prijatelj a
 left join prijateljostavljena b on a.sifra=b.prijatelj
 where a.sifra is not null;
 
+#preimenuje imena kolona, vrijednost ostaje ista
+select stilfrizura as crna, prstena as vjencaniprsten
+from prijatelj
+where sifra>1
+order by stilfrizura desc
+limit 1;
+
+
+#preimenuje imena prvog riješenja
+select 'stilfrizura' as crna, 'prstena' as vjencaniprsten
+from prijatelj
+where sifra>1
+order by stilfrizura desc
+limit 1;
+
+
+# distinct oznaka
+select distinct prstena from prijatelj;
 
 
 
-
-
-
-
+update ostavljena a 
+inner join prijateljostavljena b on a.sifra=b.ostavljena 
+inner join prijatelj c on c.sifra=b.prijatelj 
+inner join brat d on d.prijatelj=c.sifra
+inner join zena e on e.brat=d.sifra 
+inner join decko f on e.sifra=f.zena 
+set d.nausnica = 10
+where d.sifra > 1;
 
 
 
